@@ -16,6 +16,12 @@
                             <item name="Amasty_Xsearch/js/components/overlay" xsi:type="array">
                                 <item name="path" xsi:type="string">Swissup_BreezeAmastyXsearch/js/overlay</item>
                             </item>
+                            <item name="amsearchFullWidth" xsi:type="array">
+                                <item name="path" xsi:type="string">Amasty_Xsearch/js/widgets/full-width</item>
+                            </item>
+                            <item name="breezeAmsearchFixes" xsi:type="array">
+                                <item name="path" xsi:type="string">Swissup_BreezeAmastyXsearch/js/breeze-fixes</item>
+                            </item>
                         </item>
                     </item>
                 </argument>
