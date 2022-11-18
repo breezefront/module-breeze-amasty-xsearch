@@ -11,13 +11,21 @@
         .amsearch-description {
             color: @muted__color;
         }
+        .page-header.amsearch-full-width .amsearch-wrapper-block {
+            z-index: 39;
+            margin-left: auto;
+        }
+        .page-header.amsearch-full-width div + .amsearch-wrapper-block {
+            margin-left: 0;
+        }
     }
 
     @media @media-md-down {
         .breeze-theme {
             .page-header .amsearch-wrapper-block {
                 margin-top: 0;
-
+            }
+            .page-header:not(.amsearch-full-width) .amsearch-wrapper-block {
                 + .switcher {
                     margin-left: auto;
                 }

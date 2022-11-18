@@ -16,6 +16,9 @@
                             <item name="Amasty_Xsearch/js/components/overlay" xsi:type="array">
                                 <item name="path" xsi:type="string">Swissup_BreezeAmastyXsearch/js/overlay</item>
                             </item>
+                            <item name="Amasty_Xsearch/js/components/loupe-trigger" xsi:type="array">
+                                <item name="path" xsi:type="string">Swissup_BreezeAmastyXsearch/js/loupe-trigger</item>
+                            </item>
                             <item name="amsearchFullWidth" xsi:type="array">
                                 <item name="path" xsi:type="string">Amasty_Xsearch/js/widgets/full-width</item>
                             </item>
