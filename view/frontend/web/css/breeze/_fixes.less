@@ -22,6 +22,19 @@
         .page-header.amsearch-full-width div + .amsearch-wrapper-block {
             margin-left: 0;
         }
+
+        .amsearch-block-header {
+            padding-bottom: 0;
+            align-items: center;
+            .amsearch-title {
+                border: 0 !important;
+                margin: 0 !important;
+            }
+        }
+
+        .amsearch-related-terms .amsearch-block-header {
+            padding: 0;
+        }
     }
 
     @media @media-md-down {
@@ -58,19 +71,6 @@
             }
             .amsearch-products-section .amsearch-block-header {
                 padding-bottom: @2;
-            }
-        }
-    }
-}
-
-& when not (@critical) {
-    .breeze-theme {
-        .amsearch-block-header {
-            padding-bottom: 0;
-            align-items: center;
-            .amsearch-title {
-                border: 0;
-                margin: 0;
             }
         }
     }
