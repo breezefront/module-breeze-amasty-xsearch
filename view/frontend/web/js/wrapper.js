@@ -33,12 +33,11 @@ define([
         initialize: function () {
             this._super();
             this.initObservable();
+            this._initInput();
+            this._initResize();
 
             $(document).on('Amasty_Xsearch/js/components/overlay:afterCreate', (event, data) => {
                 this.amsearch_overlay_section = data.instance;
-
-                this._initInput();
-                this._initResize();
                 this._initOverlay();
             });
 
@@ -49,11 +48,9 @@ define([
          * @inheritDoc
          */
         initObservable: function () {
-            var focusSubscriber,
-                self = this;
+            var focusSubscriber;
 
-            _.each({
-                visible: true,
+            this.observe({
                 loading: false,
                 focused: false,
                 opened: false,
@@ -66,16 +63,16 @@ define([
                 searchItems: [],
                 match: false,
                 message: ''
-            }, function (value, key) {
-                self[key] = _.isArray(value) ?  ko.observableArray(value) : ko.observable(value);
             });
 
-            focusSubscriber = this.focused.subscribe(function (value) {
-                if (value) {
-                    focusSubscriber.dispose();
-                    this.updatePreload();
-                }
-            }, this);
+            if (this.data.preloadEnabled) {
+                focusSubscriber = this.focused.subscribe(function (value) {
+                    if (value) {
+                        focusSubscriber.dispose();
+                        this.updatePreload();
+                    }
+                }, this);
+            }
 
             return this;
         },
@@ -176,7 +173,7 @@ define([
         searchProcess: function (value) {
             this.loading(true);
 
-            $.get(this.data.url, {
+            return $.get(this.data.url, {
                 data: {
                     q: value,
                     uenc: this.data.currentUrlEncoded,
@@ -220,6 +217,15 @@ define([
         },
 
         /**
+         * @returns {string}
+         */
+        getProductsBlockClasses: function () {
+            return this.data.popup_display
+                ? 'amsearch-products-section -list'
+                : 'amsearch-products-section -grid';
+        },
+
+        /**
          * init Input value if is setup before ko initialized
          *
          * @public
@@ -227,10 +233,17 @@ define([
          * @returns {void}
          */
         initInputValue: function (node) {
-            var value = node.value;
+            var value = node.value,
+                query;
+
+            if (this.data.isSaveSearchInputValueEnabled) {
+                query = this.getSearchQuery();
+            }
 
             if (value && value.length) {
                 this.inputValue(node.value);
+            } else if (query) {
+                this.inputValue(query);
             }
         },
 
@@ -253,6 +266,10 @@ define([
                     }
                 })
                 .subscribe(function (value) {
+                    // if (this.getSearchQuery() === value) {
+                    //     return false;
+                    // }
+
                     var isSearch = value.length >= this.data.minChars,
                         strippedValue = helpers.stripTags(value);
 
@@ -324,11 +341,20 @@ define([
 
             Object.keys(data).forEach(function (key) {
                 if (data[key].type === 'product') {
-                    if (!data[key].html.length) {
-                        this.searchProducts(false);
+                    const isEmptyData = _.isEmpty($.parseHTML(data[key].html.trim())),
+                        isProductsSeparateSection = this.isNeedHorizontalView();
+
+                    if (isEmptyData) {
+                        this.searchProducts([]);
                         this.message(this.messages.emptyProductSearch.replace('%search_query%', this.inputValue()));
-                    } else {
+
+                        return;
+                    }
+
+                    if (isProductsSeparateSection) {
                         this.searchProducts(data[key].html);
+                    } else {
+                        searchItems.push(data[key]);
                     }
 
                     return;
@@ -342,6 +368,27 @@ define([
             }.bind(this));
 
             this.searchItems(searchItems);
+        },
+
+        isNeedHorizontalView: function () {
+            return this.data.fullWidth
+                || this.data.width >= 700 && window.innerWidth >= 768;
+        },
+
+        getSearchQuery: function () {
+            if (this.data.isSeoUrlsEnabled) {
+                var currentUrl = window.location.href,
+                    seoKey = '/' + this.data.seoKey + '/';
+
+                if (currentUrl.includes(seoKey)) {
+                    return decodeURIComponent(
+                        currentUrl.split('/').pop()?.replace(/\+/g, ' ')
+                        ?? ''
+                    );
+                }
+            }
+
+            return new URLSearchParams(window.location.search).get('q');
         }
     });
 });
