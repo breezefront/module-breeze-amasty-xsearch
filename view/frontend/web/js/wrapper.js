@@ -32,7 +32,6 @@ define([
          */
         initialize: function () {
             this._super();
-            this.initObservable();
             this._initInput();
             this._initResize();
 
