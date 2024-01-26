@@ -10,7 +10,13 @@
                             <item name="Amasty_Xsearch/js/wrapper" xsi:type="array">
                                 <item name="path" xsi:type="string">Swissup_BreezeAmastyXsearch/js/wrapper</item>
                                 <item name="import" xsi:type="array">
-                                    <item name="helpers" xsi:type="string">Swissup_BreezeAmastyXsearch/js/helpers</item>
+                                    <item name="amsearch_helpers_parent" xsi:type="string">Amasty_Xsearch/js/utils/helpers</item>
+                                    <item name="amsearch_helpers" xsi:type="string">Swissup_BreezeAmastyXsearch/js/helpers</item>
+                                    <!--
+                                    <item name="amsearchProductLinksStorageParent" xsi:type="string">Amasty_Xsearch/js/utils/links-storage</item>
+                                    <item name="amsearchProductLinksStorage" xsi:type="string">Swissup_BreezeAmastyXsearch/js/links-storage</item>
+                                    -->
+                                    <item name="parent" xsi:type="string">Amasty_Xsearch/js/wrapper</item>
                                 </item>
                                 <item name="enabled" xsi:type="helper" helper="Swissup\Breeze\Helper\Config::isModuleEnabled">
                                     <param name="module">Amasty_Xsearch</param>
@@ -18,24 +24,24 @@
                             </item>
                             <item name="Amasty_Xsearch/js/components/overlay" xsi:type="array">
                                 <item name="path" xsi:type="string">Swissup_BreezeAmastyXsearch/js/overlay</item>
+                                <item name="import" xsi:type="array">
+                                    <item name="parent" xsi:type="string">Amasty_Xsearch/js/components/overlay</item>
+                                </item>
                                 <item name="enabled" xsi:type="helper" helper="Swissup\Breeze\Helper\Config::isModuleEnabled">
                                     <param name="module">Amasty_Xsearch</param>
                                 </item>
                             </item>
                             <item name="Amasty_Xsearch/js/components/loupe-trigger" xsi:type="array">
                                 <item name="path" xsi:type="string">Swissup_BreezeAmastyXsearch/js/loupe-trigger</item>
+                                <item name="import" xsi:type="array">
+                                    <item name="parent" xsi:type="string">Amasty_Xsearch/js/components/loupe-trigger</item>
+                                </item>
                                 <item name="enabled" xsi:type="helper" helper="Swissup\Breeze\Helper\Config::isModuleEnabled">
                                     <param name="module">Amasty_Xsearch</param>
                                 </item>
                             </item>
                             <item name="amsearchFullWidth" xsi:type="array">
                                 <item name="path" xsi:type="string">Amasty_Xsearch/js/widgets/full-width</item>
-                                <item name="enabled" xsi:type="helper" helper="Swissup\Breeze\Helper\Config::isModuleEnabled">
-                                    <param name="module">Amasty_Xsearch</param>
-                                </item>
-                            </item>
-                            <item name="breezeAmsearchFixes" xsi:type="array">
-                                <item name="path" xsi:type="string">Swissup_BreezeAmastyXsearch/js/breeze-fixes</item>
                                 <item name="enabled" xsi:type="helper" helper="Swissup\Breeze\Helper\Config::isModuleEnabled">
                                     <param name="module">Amasty_Xsearch</param>
                                 </item>
