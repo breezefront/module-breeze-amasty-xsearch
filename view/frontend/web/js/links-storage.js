@@ -1,5 +1,5 @@
-(() => {
+define(['uiComponent'], (Component) => {
     'use strict';
 
-    $.breezemap['amsearchProductLinksStorage'] = $.breezemap.__lastComponent();
-})();
+    Component.registerLastAnonymous('amsearchProductLinksStorage');
+});

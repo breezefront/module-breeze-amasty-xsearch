@@ -1,9 +1,10 @@
 define([
-    'jquery'
-], function ($) {
+    'jquery',
+    'uiComponent'
+], function ($, Component) {
     'use strict';
 
-    $.breezemap['Amasty_Xsearch/js/components/overlay'] = $.breezemap.__lastComponent();
+    Component.registerLastAnonymous('Amasty_Xsearch/js/components/overlay');
 
     $.mixin('Amasty_Xsearch/js/components/overlay', {
         destroy: function (parent) {
