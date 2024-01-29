@@ -1,5 +1,5 @@
 define(['uiComponent'], (Component) => {
     'use strict';
 
-    Component.registerLastAnonymous('Amasty_Xsearch/js/components/loupe-trigger');
+    Component.register('Amasty_Xsearch/js/components/loupe-trigger');
 });

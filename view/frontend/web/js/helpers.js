@@ -1,5 +1,5 @@
 define(['uiComponent'], (Component) => {
     'use strict';
 
-    Component.registerLastAnonymous('amsearch_helpers');
+    Component.register('amsearch_helpers');
 });

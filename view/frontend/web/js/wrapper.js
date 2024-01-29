@@ -4,7 +4,7 @@ define([
 ], function ($, Component) {
     'use strict';
 
-    Component.registerLastAnonymous('Amasty_Xsearch/js/wrapper');
+    Component.register('Amasty_Xsearch/js/wrapper');
 
     $.mixin('Amasty_Xsearch/js/wrapper', {
         defaults: {

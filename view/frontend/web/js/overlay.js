@@ -4,7 +4,7 @@ define([
 ], function ($, Component) {
     'use strict';
 
-    Component.registerLastAnonymous('Amasty_Xsearch/js/components/overlay');
+    Component.register('Amasty_Xsearch/js/components/overlay');
 
     $.mixin('Amasty_Xsearch/js/components/overlay', {
         destroy: function (parent) {
