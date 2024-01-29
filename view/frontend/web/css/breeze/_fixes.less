@@ -12,6 +12,9 @@
             font-size: @font-size__base;
             .lib-css(border-radius, @button__border-radius);
         }
+        .amsearch-item-container .amsearch-item .amsearch-link {
+            font-size: @font-size__base;
+        }
         .amsearch-description {
             color: @muted__color;
         }
@@ -41,6 +44,12 @@
         .breeze-theme {
             .page-header .amsearch-wrapper-block {
                 margin-top: 0;
+                &::before {
+                    margin: 0 -8px;
+                    width: auto;
+                    left: 0;
+                    right: 0;
+                }
             }
             .page-header:not(.amsearch-full-width) .amsearch-wrapper-block {
                 + .switcher {
@@ -65,9 +74,6 @@
             }
             .amsearch-item-container {
                 padding: 0 0 @2;
-            }
-            .amsearch-item-container .amsearch-item .amsearch-link {
-                font-size: @font-size__base;
             }
             .amsearch-products-section .amsearch-block-header {
                 padding-bottom: @2;
