@@ -7,11 +7,16 @@
                 <argument name="bundles" xsi:type="array">
                     <item name="default" xsi:type="array">
                         <item name="items" xsi:type="array">
+                            <item name="amsearch_helpers" xsi:type="array">
+                                <item name="path" xsi:type="string">Swissup_BreezeAmastyXsearch/js/helpers</item>
+                                <item name="import" xsi:type="array">
+                                    <item name="parent" xsi:type="string">Amasty_Xsearch/js/utils/helpers</item>
+                                </item>
+                            </item>
                             <item name="Amasty_Xsearch/js/wrapper" xsi:type="array">
                                 <item name="path" xsi:type="string">Swissup_BreezeAmastyXsearch/js/wrapper</item>
                                 <item name="import" xsi:type="array">
-                                    <item name="amsearch_helpers_parent" xsi:type="string">Amasty_Xsearch/js/utils/helpers</item>
-                                    <item name="amsearch_helpers" xsi:type="string">Swissup_BreezeAmastyXsearch/js/helpers</item>
+                                    <item name="amsearch_helpers" xsi:type="string">amsearch_helpers</item>
                                     <!--
                                     <item name="amsearchProductLinksStorageParent" xsi:type="string">Amasty_Xsearch/js/utils/links-storage</item>
                                     <item name="amsearchProductLinksStorage" xsi:type="string">Swissup_BreezeAmastyXsearch/js/links-storage</item>
@@ -34,6 +39,7 @@
                             <item name="Amasty_Xsearch/js/components/loupe-trigger" xsi:type="array">
                                 <item name="path" xsi:type="string">Swissup_BreezeAmastyXsearch/js/loupe-trigger</item>
                                 <item name="import" xsi:type="array">
+                                    <item name="amsearch_helpers" xsi:type="string">amsearch_helpers</item>
                                     <item name="parent" xsi:type="string">Amasty_Xsearch/js/components/loupe-trigger</item>
                                 </item>
                                 <item name="enabled" xsi:type="helper" helper="Swissup\Breeze\Helper\Config::isModuleEnabled">
@@ -42,6 +48,9 @@
                             </item>
                             <item name="amsearchFullWidth" xsi:type="array">
                                 <item name="path" xsi:type="string">Amasty_Xsearch/js/widgets/full-width</item>
+                                <item name="import" xsi:type="array">
+                                    <item name="amsearch_helpers" xsi:type="string">amsearch_helpers</item>
+                                </item>
                                 <item name="enabled" xsi:type="helper" helper="Swissup\Breeze\Helper\Config::isModuleEnabled">
                                     <param name="module">Amasty_Xsearch</param>
                                 </item>
