@@ -1,7 +1,10 @@
 <!-- ko if: $data.searchItems && $data.searchItems().length -->
 <section class="amsearch-items-section"
          data-bind="foreach: $data.searchItems()">
-    <div data-bind="afterRender: $parent.updateHtml, html: $data.html"></div>
+    <div data-bind="afterRender: $parent.updateHtml, html: $data.html,
+        attr: {
+            class: ($data.type === 'product') ? $parent.getProductsBlockClasses() : ''
+        }"></div>
 </section>
 <!-- /ko -->
 
