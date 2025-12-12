@@ -13,6 +13,7 @@
                             <item name="amsearch_helpers" xsi:type="array">
                                 <item name="path" xsi:type="string">Swissup_BreezeAmastyXsearch/js/helpers</item>
                                 <item name="import" xsi:type="array">
+                                    <item name="catalogAddToCart" xsi:type="string">catalogAddToCart</item>
                                     <item name="parent" xsi:type="string">Amasty_Xsearch/js/utils/helpers</item>
                                 </item>
                             </item>
