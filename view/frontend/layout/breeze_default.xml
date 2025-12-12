@@ -67,9 +67,6 @@
 
         <referenceContainer name="breeze.container">
             <block class="Swissup\Breeze\Block\HtmlTemplate" template="Amasty_Xsearch::components/loader.html"/>
-            <block class="Swissup\Breeze\Block\HtmlTemplate" template="Swissup_BreezeAmastyXsearch::components/preload.html"/>
-            <block class="Swissup\Breeze\Block\HtmlTemplate" template="Swissup_BreezeAmastyXsearch::results/wrapper.html"/>
-            <block class="Swissup\Breeze\Block\HtmlTemplate" template="Swissup_BreezeAmastyXsearch::components/message.html"/>
         </referenceContainer>
     </body>
 </page>

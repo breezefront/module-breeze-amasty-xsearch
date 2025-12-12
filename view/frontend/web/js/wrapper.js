@@ -7,15 +7,6 @@ define([
     Component.register('Amasty_Xsearch/js/wrapper');
 
     $.mixin('Amasty_Xsearch/js/wrapper', {
-        defaults: {
-            templates: {
-                preload: 'Swissup_BreezeAmastyXsearch/components/preload.html',
-                message: 'Swissup_BreezeAmastyXsearch/components/message.html',
-                results: 'Swissup_BreezeAmastyXsearch/results/wrapper.html',
-                loader: 'Amasty_Xsearch/components/loader.html'
-            }
-        },
-
         onEnter: function (parent, UiClass, event) {
             if (event.keyCode === 13) {
                 // productLinksStorage.saveLinks($(this.selectors.wrapper));
